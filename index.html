@@ -7,7 +7,7 @@
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
     integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
-  <link rel="stylesheet" type="text/css" href="./trivia.css">
+  <link rel="stylesheet" type="text/css" href="./assets/css/trivia.css">
 
   <title>TEST</title>
 </head>
@@ -23,9 +23,9 @@
     <div id="container">
 
       <div id="gameContainer">
-
+        <h1 id="title ">WEB TRIVIA GAME</h1>
         <div id="gameHeader">
-          
+
           <div class="left questions">
             <div class="container"><span> </span></div>
           </div>
@@ -36,40 +36,43 @@
             <div class="container">SCORE: <span></span></div>
           </div>
         </div>
+
         <div id="gameChoices">
           <div class="row">
-            <div class="left half">
-              <div class="container"><button id="buttonOne"></button></div>
+            <div class="col-sm-6 left ">
+              <div class="container"><button id="buttonOne"></button>
+              </div>
             </div>
             <div class="left half">
-              <div class="container"><button id="buttonTwo"></button></div>
+              <div class="container"><button id="buttonTwo"></button>
+              </div>
             </div>
           </div>
           <div class="row">
             <div class="left half">
-              <div class="container"><button id="buttonThree"></button></div>
+              <div class="container"><button id="buttonThree"></button>
+              </div>
             </div>
             <div class="left half">
-              <div class="container"><button id="buttonFour"></button></div>
+              <div class="container"><button id="buttonFour"></button>
+              </div>
             </div>
+
+
           </div>
         </div>
 
+        <button id="startButton">START</button>
       </div>
-      <h1 id="title">WEB TRIVIA GAME</h1>
     </div>
-      <button id="startButton">START</button>
-    </div>
-  
-  <div id="modal_window">
+    <div id="modal_window">
       <div class="modal_message">
         <p></p>
-     
-  </div>
-  <script src="https://code.jquery.com/jquery-3.4.1.js" integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
-    crossorigin="anonymous"></script>
-  <script type="text/javascript" src="./jquery.js"></script>
-</body>
+      </div>
+      <script src="https://code.jquery.com/jquery-3.4.1.js"
+        integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
+      <script type="text/javascript" src="./assets/javascript/jquery.js"></script>
+
 </body>
 
 </html>

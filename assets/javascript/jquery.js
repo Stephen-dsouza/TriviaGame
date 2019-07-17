@@ -1,17 +1,12 @@
 $(document).ready(function () {
   //global variables
-  var CorrectAnswer = 0;
-  var WrongAnswer = 0;
-  var Unanswered = 0;
-  var Timer = 30;
-
   var TriviaQuestions = [{
     Question: "Where does Season 1 opening scene take place?",
     Choices: ["Hawkins Middle School", "Will's home", "Hawkins National Laboratory", "Hawkins Police Station"],
     ValidAnswer: 2
   }, {
-    question: "In what decade is the Netflix series set?",
-    choices: ["1960s", "1970s", "1980s", "1990s"],
+    Question: "In what decade is the Netflix series set?",
+    Choices: ["1960s", "1970s", "1980s", "1990s"],
     validAnswer: 2
 
   }, {
@@ -24,33 +19,76 @@ $(document).ready(function () {
     Choices: ["Ghost Castle", "Dungeons & Dragons", "Hero Quest", "Crossbows & Catapults"],
     ValidAnswer: 1
   }];
-  // Add click listener to start button 
 
+  var CorrectAnswer = 0;
+  var WrongAnswer = 0;
+  var Unanswered = 0;
+  var Timer = 30;
+  var intervalId;
 
+  // Add click listener to start button and hide the gamequestion and choices.On click,Questiona nd choices are shown
+  $("#gameHeader,#gameChoices").hide();
   $("#startButton").on("click", function () {
     $(this).hide();
+    $("#gameHeader,#gameChoices").show();
     // counter = setInterval(timer, 1000); 
     startGamePlay();
-    
+
   });
 
   //start the game
- 
+
 
   function startGamePlay() {
-    $(".questions span").append(TriviaQuestions[0].Question);
-    $(".buttonOne").append(TriviaQuestions[0].Choices[0]);
+    for (var i = 0; i < TriviaQuestions.length; i++) {
+      QuestionWithChoices(i);
+      run();
+
+    }
+
 
 
   }
   //display the question with 4 choices
- 
+  function QuestionWithChoices(q1) {
+    $(".questions span").html(TriviaQuestions[q1].Question);
+    $("#buttonOne").html(TriviaQuestions[q1].Choices[0]);
+    $("#buttonTwo").html(TriviaQuestions[q1].Choices[1]);
+    $("#buttonThree").html(TriviaQuestions[q1].Choices[2]);
+    $("#buttonFour").html(TriviaQuestions[q1].Choices[3]);
+  }
 
- 
   //start the timer for each question
 
+  //Clear the timer
+  function run() {
+    clearInterval(intervalId);
+    intervalId = setInterval(decrement, 1000);;
+  }
+
+  function decrement() {
+
+    //  Decrease number by one.
+    Timer--;
+
+    //  Show the Timer.
+    $(".timer span").html(Timer);
 
 
+    //  Once number hits zero...
+    if (Timer === 0) {
+
+      //  ...run the stop function.
+      stop();
+
+      //  Alert the user that time is up.
+      alert("Time Up!");
+    }
+  }
+
+  function stop() {
+    clearInterval(intervalId);
+  }
   //Get the value of click . IF not clicked and time out go to next question
 
   //If end of questions give correct answer, wrong answer, unanswered questions and dispay along with restart option.
