@@ -3,8 +3,7 @@ $(document).ready(function () {
       var TriviaQuestions = [{
         Question: "Where does Season 1 opening scene take place?",
         Choices: ["Hawkins Middle School", "Will's home", "Hawkins National Laboratory", "Hawkins Police Station"],
-        ValidAnswer: 2
-      }, {
+        ValidAnswer: "Hawkins National Laboratory"      }, {
         Question: "In what decade is the Netflix series set?",
         Choices: ["1960s", "1970s", "1980s", "1990s"],
         validAnswer: "1980s"
@@ -25,6 +24,7 @@ $(document).ready(function () {
       var Unanswered = 0;
       var Timer = 30;
       var intervalId;
+      
 
       // Add click listener to start button and hide the game question and choices.On click,Questiona nd choices are shown
       $("#gameHeader,#gameChoices").hide();
@@ -47,7 +47,8 @@ $(document).ready(function () {
       }
 
       $("#buttonOne,#buttonTwo,#buttonThree,#buttonFour").on("click", function () {
-          var id = this.id;
+          var id =$(this).text();
+         console.log($(this).text()); 
           if (id === TriviaQuestions[i].ValidAnswer) {
             i++;
             CorrectAnswer++;
@@ -61,9 +62,9 @@ $(document).ready(function () {
           });
 
 
-        console.log(this);
+        
          console.log(CorrectAnswer);
-
+         console.log(CorrectAnswer);
         //display the question with 4 choices
         function QuestionWithChoices(q1) {
           $(".questions span").html(TriviaQuestions[q1].Question);
