@@ -91,7 +91,7 @@ body{
 .questions span {
   color: #5a7785;
   font-weight: bolder;
-  font-size: 35px;
+  font-size: 40px;
 }
 
 #gameScore {
@@ -106,9 +106,9 @@ body{
   float:left;
   display: block;
   margin-right: 2%;
-  
+  font-weight: 900;
   font-size: 30px;
-  color: brown;
+  color:rgb(55, 112, 112);
 }
 
 .score {
