@@ -23,7 +23,7 @@ $(document).ready(function () {
       var correctAnswer = 0;
       var wrongAnswer = 0;
       var unanswered = 0;
-      var timer = 5;
+      var timer = 55;
       var intervalId;
       var buttonClickEvent;
       var questionNumber = 0;

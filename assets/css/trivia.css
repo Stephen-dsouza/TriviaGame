@@ -15,7 +15,7 @@ body{
   border: 10px solid #5a7785;
   background-color:#90a4ae;
   background-image: url(../images/mainimage.jpg);
-  background-size: 100% auto;
+  
   position: fixed;
   top:0;
 }
@@ -78,27 +78,28 @@ body{
 
 .questions {
   width: 68%;
-  background-color: #000;
+  /* background-color: #000; */
   float:left;
   display: block;
   margin-right: 2%;
-  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.26);
+  /* box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.26); */
 }
 
 .questions span {
-  color: #ff5722;
-  font-size: 26px;
+  color: #5a7785;
+  font-weight: bolder;
+  font-size: 35px;
 }
 
 .timer {
   width: 15%;
-  background-color: #f4b400;
+  /* background-color: #f4b400; */
   float:left;
   display: block;
   margin-right: 2%;
-  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.26);
-  font-size: 26px;
-  color: #fff;
+  /* box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.26); */
+  font-size: 30px;
+  color: brown;
 }
 
 .score {
@@ -108,7 +109,7 @@ body{
   display: block;
   box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.26);
   color: #ff5722;
-  font-size: 26px;
+  font-size: 35px;
 }
 
 .half {width: 50%;}
