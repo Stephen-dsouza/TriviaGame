@@ -40,39 +40,37 @@ $(document).ready(function () {
   });
 
   function startGamePlay() {
+    
+  
     QuestionWithChoices(QuestionNumber)
     runTimer()
+    
   }
   //Capture the button click
   $("#buttonOne,#buttonTwo,#buttonThree,#buttonFour").on("click", function () {
     ButtonClickEvent = $(this).text();
     console.log($(this).text());
+    stopTimer()
     //if the button click matches the answer questions still remain
     if (ButtonClickEvent === TriviaQuestions[QuestionNumber].ValidAnswer && QuestionNumber < TriviaQuestions.length) {
       //increase the count of question number
-      stopTimer()
       QuestionNumber++;
       //Add 10 points to the score
-      CorrectAnswer = CorrectAnswer + 10;
+      CorrectAnswer+= 10;
       console.log(CorrectAnswer);
       //Go to the next Question
-      startGamePlay()
-
-
-
-
-    }
+    }//butoon is clicked and questions are exhausted
+    
     // wrong answer is clicked
     else {
       //Increase the wrong answer count
-      stopTimer()
       WrongAnswer++;
       //increase the count of question number
       QuestionNumber++;
       console.log("Wrong answer");
       //Go to the next Question
-      startGamePlay();
     }
+    startGamePlay();
   });
 
 
@@ -103,25 +101,25 @@ $(document).ready(function () {
     $(".timer span").html(Timer);
     //  Once number hits zero...
     if (Timer === 0) {
-      if (!ButtonClickEvent) {
-        console.log(ButtonClickEvent);
         stopTimer();
         QuestionNumber++;
         startGamePlay()
       }
       //  ...run the stop function.Go to next question and restart timer
       //  Alert the user that time is up.
-      alert("Time Up!");
-    } else {
-      // alert("GAMEOVER");
-    }
+    
   }
 
   function stopTimer() {
     clearInterval(intervalId);
-    Timer=10;
+    Timer = 10;
   }
   //Get the value of click . IF not clicked and time out go to next question
 
   //If end of questions give correct answer, wrong answer, unanswered questions and dispay along with restart option.
+
+  function EndofGAme(){
+  stopTimer();
+      CorrectAnswer = CorrectAnswer + 10;
+      $(".modal").show();}
 });
